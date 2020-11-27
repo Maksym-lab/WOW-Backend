@@ -1,0 +1,13 @@
+{
+  "name": "sanity-page-restapi",
+  "version": "1.0.0",
+  "description": "backend for the sanity insurgency team website",
+  "main": "app.js",
+  "author": "Fabian Obermaier",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "faker": "^4.1.0"
+  }
+}
