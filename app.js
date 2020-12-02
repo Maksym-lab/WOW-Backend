@@ -1,13 +1,11 @@
-var express = require('express')
-var bodyParser = require("body-parser")
-var routes = require("./routes/routes.js")
-const config = require('./config');
+const bodyParser = require("body-parser")
+const express = require('express')
+const routes = require("./routes/routes")
+const config = require('./config/config');
 const { port, limit } =  config.app
 var app = express()
 app.use(bodyParser.json({ limit }))
-app.use(bodyParser.urlencoded({ extended: true }))
 routes(app)
-app.listen(3000, function () {
-  console.log('Example app listening on port:' + port)
-  console.log(port)
-});
+app.listen(port, function () {
+  console.log('Sanity API listening on port:' + port)
+})
