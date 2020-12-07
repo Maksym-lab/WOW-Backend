@@ -3,7 +3,7 @@ var models  = require('../models');
 var router = express.Router();
 (function updatePlaytimeTask() {
   models.Player.updatePlaytime()
-  setTimeout(updatePlaytimeTask, 5000)
+  setTimeout(updatePlaytimeTask, 86400000)
 })();
 router.get('/', function(req, res) {
   const params = req.query
