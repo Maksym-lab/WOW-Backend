@@ -1,20 +1,20 @@
 const config = {
   app: {
     port: 3000,
-    limit: "100kb" 
+    limit: '100kb' 
   },
   sequelize: {
     connectionLimit: 10,
-    host: "localhost",
-    database: "sanity",
+    host: 'localhost',
+    database: 'sanity',
     port: 3306,
-    username: "",
-    password: "",
-    dialect: "mysql",
+    username: '',
+    password: '',
+    dialect: 'mysql',
     logging: false
   },
   steam: {
-    apiKey: ""
+    apiKey: ''
   }
 };
 module.exports = config;

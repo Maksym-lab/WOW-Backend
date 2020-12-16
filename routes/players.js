@@ -1,7 +1,7 @@
-var express = require("express");
-var models = require("../models");
+var express = require('express');
+var models = require('../models');
 var router = express.Router();
-const config = require("../config/config");
+const config = require('../config/config');
 const dayInMilli = 86400000;
 if (config.steam.apiKey.length > 0) {
   (function updatePlaytimeTask() {
@@ -9,7 +9,7 @@ if (config.steam.apiKey.length > 0) {
     setTimeout(updatePlaytimeTask, dayInMilli);
   })();
 }
-router.get("/", function(req, res) {
+router.get('/', function(req, res) {
   const params = req.query;
   const id = params.id || req.params.id;
   const { firstName } = params;
@@ -23,14 +23,14 @@ router.get("/", function(req, res) {
           if (players) {
             return res.status(200).send(players);
           }
-          return res.status(404).send("404 not found");
+          return res.status(404).send('404 not found');
         }
       );
     } catch (err) {
-      return res.status(400).send("400 bad requst:" + err);
+      return res.status(400).send('400 bad requst:' + err);
     }
   }
-  router.get("/:id", function(req, res) {
+  router.get('/:id', function(req, res) {
     try {
       const idInt = Number.parseInt(req.params.id);
       models.Player.findById(idInt, { include: [models.Team] }).then(
@@ -38,18 +38,18 @@ router.get("/", function(req, res) {
           if (players) {
             return res.status(200).send(players);
           }
-          return res.status(404).send("404 not found");
+          return res.status(404).send('404 not found');
         }
       );
     } catch (err) {
-      return res.status(400).send("400 bad requst:" + err);
+      return res.status(400).send('400 bad requst:' + err);
     }
   });
   models.Player.findAll().then(players => {
     if (players) {
       return res.status(200).send(players);
     }
-    return res.status(404).send("404 not found");
+    return res.status(404).send('404 not found');
   });
 });
 module.exports = router;
