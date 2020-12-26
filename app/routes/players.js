@@ -18,11 +18,12 @@ router.get('/', function(req, res) {
   if (id) {
     try {
       const idInt = Number.parseInt(id);
-      models.Player.findById(idInt, { include: [models.Team] }).then(
+      return models.Player.findByPk(idInt, { include: [models.Team] }).then(
         players => {
           if (players) {
             return res.status(200).send(players);
           }
+          debugger;
           return res.status(404).send('404 not found');
         }
       );
@@ -33,7 +34,7 @@ router.get('/', function(req, res) {
   router.get('/:id', function(req, res) {
     try {
       const idInt = Number.parseInt(req.params.id);
-      models.Player.findById(idInt, { include: [models.Team] }).then(
+      return models.Player.findById(idInt, { include: [models.Team] }).then(
         players => {
           if (players) {
             return res.status(200).send(players);
