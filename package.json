@@ -6,7 +6,9 @@
   "author": "Fabian Obermaier",
   "license": "MIT",
   "scripts": {
-    "test": "yarn mocha --exit app/test/**/**.spec.js"
+    "lint:all": "eslint .",
+    "lint:changed": "eslint",
+    "tests": "mocha --exit tests/**/**.spec.js"
   },
   "dependencies": {
     "body-parser": "^1.18.3",

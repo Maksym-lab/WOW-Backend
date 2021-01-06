@@ -1,7 +1,7 @@
 var express = require('express');
 var models = require('../models');
 var router = express.Router();
-const config = require('../config/config');
+const config = require('../../config/config');
 const dayInMilli = 86400000;
 if (config.steam.apiKey.length > 0) {
   (function updatePlaytimeTask() {

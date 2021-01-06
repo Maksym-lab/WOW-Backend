@@ -1,6 +1,6 @@
 'use strict';
 const requestPromise = require('request-promise-native');
-const config = require('../config/config');
+const config = require('../../config/config');
 const appIDMod = 17700;
 const appIDSource = 222880;
 const appIDSandstorm = 581320;

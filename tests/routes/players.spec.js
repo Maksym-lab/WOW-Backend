@@ -17,7 +17,7 @@ const playerModel = {
 };
 let app;
 before(async () => {
-  app = require('../../app');
+  app = require('../../app/app');
 });
 after(async () => {
   app.stop();
