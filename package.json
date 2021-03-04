@@ -9,7 +9,8 @@
     "lint:all": "eslint .",
     "lint:changed": "eslint",
     "tests": "mocha --exit tests/**/**.spec.js",
-    "start": "node app/app.js"
+    "start": "node app/app.js",
+    "debug": "node --inspect app/app.js"
   },
   "devDependencies": {
     "chai": "^4.2.0",
