@@ -1,5 +1,5 @@
 {
-  "name": "sanity-page-restapi",
+  "name": "sanity-backend",
   "version": "1.0.0",
   "description": "backend for the sanity insurgency team website",
   "main": "app.js",
@@ -10,7 +10,7 @@
     "lint:changed": "eslint",
     "tests": "mocha --exit tests/**/**.spec.js",
     "start": "node app/app.js",
-    "debug": "node --inspect app/app.js"
+    "debug": "node --inspect-brk app/app.js"
   },
   "devDependencies": {
     "chai": "^4.2.0",
