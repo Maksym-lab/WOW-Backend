@@ -43,7 +43,9 @@ module.exports = (sequelize, DataTypes) => {
     const response = await requestPromise(options)
       .then(body => body.response)
       .catch(err => {
-        console.error(err);
+        throw new Error(
+          `steam api request failed for steamid ${player.steamId}: \n ${err}`
+        );
       });
     if (response.games) {
       const columns = {};
@@ -75,7 +77,7 @@ module.exports = (sequelize, DataTypes) => {
     const players = await Player.findAll().filter(p => p.steamId);
     console.log(`updating playtime for ${players.length} players.`);
     for (const player of players) {
-      Player.updatePlaytime(player);
+      Player.updatePlaytime(player).catch(err => console.error(err));
     }
   };
   return Player;
