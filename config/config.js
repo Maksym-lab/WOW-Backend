@@ -1,11 +1,11 @@
 const config = {
   app: {
-    port: 3000,
+    port: 8080,
     limit: '100kb' 
   },
   sequelize: {
-    connectionLimit: 10,
-    host: 'localhost',
+    connectionLimit: 25,
+    host: '127.0.0.1',
     database: 'sanity',
     port: 3306,
     username: '',
